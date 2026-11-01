@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080910">
+<title>For My Devansh 💌</title>
+<style>
+:root{
+ --night:#080910;--ink:#111522;--blue:#75aaff;--blue2:#244b91;
+ --red:#ff557b;--green:#75e0ad;--cream:#fff4f7;--muted:#c2c7d6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--cream);font-family:"Trebuchet MS",Georgia,serif;background:
+ radial-gradient(ellipse at 12% 10%,#16335b88,transparent 34%),
+ radial-gradient(ellipse at 88% 25%,#5c142b66,transparent 30%),
+ radial-gradient(ellipse at 50% 85%,#0d493866,transparent 35%),var(--night);
+ overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.25;
+ background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#75aaff 1px,transparent 1px);
+ background-size:53px 53px,91px 91px;background-position:0 0,25px 35px}
+a{color:inherit}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:70px 20px;position:relative;isolation:isolate}
+.hero:before,.hero:after{content:"";position:absolute;width:270px;height:270px;border-radius:50%;filter:blur(75px);opacity:.25;z-index:-1}
+.hero:before{background:var(--blue);left:-90px;top:10%}.hero:after{background:var(--red);right:-100px;bottom:8%}
+.hero-inner{max-width:850px}
+.kicker{font:700 .72rem Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--green)}
+h1{font-size:clamp(3.5rem,11vw,7rem);line-height:.92;margin:25px 0 20px;letter-spacing:-3px;
+ background:linear-gradient(110deg,#fff 5%,#9fc8ff 35%,#ff9bb3 68%,#9bf0c5 95%);
+ -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 45px #78aaff22}
+.hero p{color:var(--muted);font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.8}
+.sparkle-line{font-size:1.4rem;letter-spacing:10px;margin:18px}
+.btn{border:1px solid #ffffff35;border-radius:999px;padding:14px 24px;font-weight:800;font-size:1rem;color:white;
+ background:linear-gradient(110deg,#24539b,#397acb);box-shadow:0 0 25px #428eff44;cursor:pointer;transition:.22s}
+.btn:hover{transform:translateY(-3px) scale(1.035);box-shadow:0 0 35px #428eff88}
+.btn.yes{background:linear-gradient(110deg,#168c69,#69d6a3);color:#07140f;box-shadow:0 0 25px #55e5ad44}
+.btn.no{background:linear-gradient(110deg,#9d2849,#f15b7b);color:white;box-shadow:0 0 25px #f15b7b44}
+main{padding:0 14px 30px}
+.chapter{width:min(940px,100%);margin:0 auto 30px;padding:clamp(24px,5vw,48px);position:relative;overflow:hidden;
+ border:1px solid #ffffff20;border-radius:28px;background:linear-gradient(145deg,#141b2bed,#0d111ceF);
+ box-shadow:0 22px 70px #0008, inset 0 1px #ffffff0c}
+.chapter:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+ background:linear-gradient(120deg,#75aaff0c,transparent 35%,#ff557b0b 75%,#75e0ad0b)}
+.chapter>*{position:relative}
+.chapter-top{display:flex;align-items:center;gap:10px;color:var(--green);font:700 .72rem Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
+h2{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:13px 0 8px;color:#b8d6ff}
+.sub{color:#ff9db4;font:700 .78rem Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin:0 0 26px}
+.story{font-size:clamp(1rem,2.3vw,1.1rem);line-height:2;color:#f2edf4;white-space:pre-line}
+.story .emoji{font-size:1.15em}
+.divider{height:1px;margin:28px 0;background:linear-gradient(90deg,transparent,#75aaff88,#ff557b88,#75e0ad88,transparent)}
+.question{margin-top:24px;padding:22px;border-radius:22px;background:#ffffff08;border:1px solid #ffffff20}
+.question h3{margin:0 0 14px;color:#ffb0c1;font-size:1.25rem}
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.response{min-height:18px;margin-top:16px;color:#b9f4d8;line-height:1.8;font-size:1.04rem}
+.end{text-align:center;padding:65px 20px 85px;color:var(--muted);line-height:2}
+.end h2{color:#ff9db4}
+.tiny{font:12px Arial,sans-serif;color:#9ca7bd}
+.float-emoji{position:fixed;z-index:99;pointer-events:none;left:0;top:0;will-change:transform,opacity}
+.firework{position:fixed;z-index:98;pointer-events:none;width:6px;height:6px;border-radius:50%;box-shadow:0 0 12px currentColor}
+@keyframes floatUp{0%{transform:translate(0,0) scale(.4) rotate(0);opacity:0}12%{opacity:1}100%{transform:translate(var(--dx),-105vh) scale(1.5) rotate(35deg);opacity:0}}
+@keyframes pop{0%{transform:translate(0,0) scale(.2);opacity:0}18%{opacity:1}100%{transform:translate(var(--x),var(--y)) scale(1.1);opacity:0}}
+@keyframes burst{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(var(--bx),var(--by)) scale(.2);opacity:0}}
+
+.love-ribbon{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 8px}
+.love-chip{padding:9px 15px;border:1px solid #ffffff20;border-radius:999px;background:#ffffff09;
+ color:#e8efff;font:700 .78rem Arial,sans-serif;letter-spacing:.4px;box-shadow:0 5px 18px #0004}
+.love-chip:nth-child(3n+1){color:#ffb3c5;border-color:#ff789044}
+.love-chip:nth-child(3n+2){color:#a9ccff;border-color:#75aaff44}
+.love-chip:nth-child(3n){color:#a8f0cb;border-color:#75e0ad44}
+.note-card{margin:22px 0;padding:20px 22px;border-radius:20px;border:1px solid #ffffff20;
+ background:linear-gradient(120deg,#1c2940aa,#32192788,#12362988);color:#e8eafa;line-height:1.8}
+.note-card .note-title{font:700 .7rem Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#9bc5ff;margin-bottom:8px}
+.doodle{font-size:1.45rem;letter-spacing:8px;text-align:center;margin:22px 0;filter:drop-shadow(0 0 10px #ff85aa55)}
+
+@media(max-width:560px){.chapter{border-radius:22px}.buttons .btn{width:100%}.hero{min-height:90svh}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="hero-inner">
+  <div class="kicker">A little universe made just for you ✦</div>
+  <div class="sparkle-line">🖤 💙 ❤️ 💚</div>
+  <h1>I'm Sorry,<br>My Man.</h1>
+  <p>For my Devansh, my kuchupuchu, my baby, my darlingggggggg,<br>my honeyyy, my mannnnnnnnnnn, my goliii. 🥹💌</p>
+  <button class="btn" onclick="goTo('chapter1');fireworks()">Open your surprise ✨</button>
+  <div class="sparkle-line">˚₊‧꒰ა ☆ ໒꒱ ‧₊˚</div>
+  <div class="tiny">Made with love, memories & a million emojis 💗</div>
+ </div>
+</header>
+
+<main>
+<section class="chapter" id="chapter1">
+ <div class="chapter-top">✦ Chapter 01 · The beginning</div>
+ <h2>Our little beginning 🥹</h2>
+ <div class="sub">The day my story got a Devansh 💙</div>
+ <div class="doodle">୨୧ 🦋 ✧ 💌 ✧ 🦋 ୨୧</div>
+ <div class="love-ribbon"><span class="love-chip">my kuchupuchu 🧸</span><span class="love-chip">my green forest 💚</span><span class="love-chip">my goliii 🫶</span></div>
+ <div class="story">hum dono hinge pr mile the jan 26-27 some thing around and 14 feb ko date pr gaye the line "why to fear when devansh is here" i was like bhai devansh so cheap but your smile that time what so pretty yr just have my heart uski baad humne coffee order kre thi "cold-coffee" uski baad your eyes was on me stuck i was blushing like hell yr (ye hell bolna tujhe se sikha devansh goli) l bhai devansh plz yr blush aa raha hai maat kr tere ankhe hi nhi aat rahe thi fir uski baad coffee giri mere pr tune tera rumal nikal meri red top pr giri hui cold coffee saaf kre uske baad chest pr bhi giri thi tune bola vaha thode din baad jaungi i was like bhaii plz esa kn hone wala hai (in my mind). and then we went home tune drop kiya best tha law garden pr pucha will u be my gf?? and i said yes tab mai teri gf toh ban gaye thi but not ek dam wala i was so afraid with this all uski baad tu toh bht excited tha k bhai i have gf...but i was afraid of my past two people but different bg ek khush hai aur ek daar raha hai....toh ab idhar se fake baddie wala seen chalu hota hai..me vanshika jain was trying to bhi baddie and ignoring you idk bhai why but you my man my kuchupuchu my baby my darlingggggggggggg my honeyyy my mannnnnnnnnnnnnnnnnnnnnnnnnnnnn myyy goliii.....You handled me k bhai vanshika baby esa nhi hota hai sab ek jise nhi hote hai give me a chance baby...and then mene ye sab 2 month tak kara to see yr sab ek jise hote hai but you prove me wrong k baby hote honge sab ek jise but the man how love's you will not and u love me.....and i love youuu soooo muchhh bht sara...... 💗🥹</div>
+ <div class="divider"></div>
+ <button class="btn" onclick="goTo('chapter2');heartKiss()">Next chapter click on button 💗</button>
+</section>
+
+<section class="chapter" id="chapter2">
+ <div class="chapter-top">✦ Chapter 02 · My favourite person</div>
+ <h2>Next chapter begins 💞</h2>
+ <div class="sub">fake baddie to his babyyy</div>
+ <div class="doodle">˚₊‧꒰ა 💗 ໒꒱ ‧₊˚</div>
+ <div class="note-card"><div class="note-title">A tiny reminder for you ✨</div>My favourite notification, my favourite person, my favourite smile. Always you, Devansh. 🥹💙</div>
+ <div class="love-ribbon"><span class="love-chip">Udaipur sunsets 🌅</span><span class="love-chip">cold coffee ☕</span><span class="love-chip">endless hugs 🫂</span><span class="love-chip">only us ♾️</span></div>
+<div class="story">My man the best thing ever happen to me is youuuu meeting u handling my overthinking my gussa my frustration and tab jab mujhe bhuk lagte hai its not me then thank youuu baby for being in life and making this year so beautifullllllllllll missiii youuu yrr...toh after 2 months we started begin serious for each other months jate jate humare trip hui best trip u and me in Udaipur the ghats sunset with bass kiss krne thi we did makeout ufff yrr best besttttest trip with youuuuu...missing you yr bht need to go on trip with you genuinely..koi na janeyge trip se aaye then sab mast.... 🥹🌅💋</div>
+</section>
+
+<section class="chapter" id="chapter3">
+ <div class="chapter-top">✦ Chapter 03 · My sorry list</div>
+ <h2>Meri mistakes… 🥺</h2>
+ <div class="sub">I am sorry, my kuchupuchu 😭💗</div>
+ <div class="doodle">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა 💞 🥺 💞</div>
+ <div class="story">meri mistakes aur aapne maafi krdi mujhe 🥺❤️</div>
+
+ <div class="question">
+  <h3>01 · Bike pr jana jab mere banda wait kr raha hai 😭</h3>
+  <div class="story">yr devansh baby i didn't want but mai bol nhi sakti thi na pr januu ab toh mai bol sakte hun k bhai chal bhai haat ja chup reh mera banda aa raha hai my man green forest aa raha hai my kuchupuchu is coming my mann ye bolne me jo uff feeling aate hai k yrr my mannnn mera bandaa kitna mast uski ankhe itni mast hai ki framed hai aur vo jab hasta hai with his small lips (down smile) kr k yr devansh just like bass kr pgle kiss kr dungi hass maat jyada....uska dimag omg bht smart hai yr bht jyada like woowwww yr itna intelligent hai my mann k just woow no words...meri sare problem ka answer hota hai..kuch bhi ho devansh ye hua..my man be like baby itna hi toh hai chill ho jayega tuna faltu k excuse dete hai samjhi ek number ki aalsi..(devasnhhhh goli tu bhi aalsi hai)...uske hands ek dam hard jise sirf vanshika jain k soft hands k liye....aur haan ek dam manifested man mila hai sorry januu i never wanted to do this never and ever.....missiii youuu yrr....lovviiiiiiiiiiiiiiiii youuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu yrrrrr bht jyadaaa my mannnn bht saraaaaaaaaaaaaaaaaaa... 😭💚💋</div>
+  <div class="buttons"><button class="btn yes" onclick="yesReply(this)">YES, maaf kiya 💋</button><button class="btn no" onclick="noReply(this)">NO 😭</button></div><div class="response"></div>
+ </div>
+
+ <div class="question">
+  <h3>02 · Metro me Khushboo k bday pr 🚇🥺</h3>
+  <div class="story">yr vo toh thoda public se daar lagta hai special man se yr bht jyada crowd place me toh bht isliye januu i did k side me aa jate hunn...im sorry that made you feel this way...i never wanted this all januuu...maafi kr do</div>
+  <div class="buttons"><button class="btn yes" onclick="yesReply(this)">YES 💚</button><button class="btn no" onclick="noReply(this)">NO 😭</button></div><div class="response"></div>
+ </div>
+
+ <div class="question">
+  <h3>03 · Apki overthinking me sath nhi dena 🥺</h3>
+  <div class="story">januu ye sab mistake k liye sorry kuchupuchu never and ever wanted to do zone out hona message nhi padhna hassna tujhe feel krvana k not interested hu but genuinely never wanted such thing that makes you hurt yr never and ever aur haan jo tu abhi mast nakhre kar raha haina januuu i wil handle till  24 nov...controlling my gusssa my nakhre and my patience for this my turn i will do more warning uu kuchupuchu (masti nhi krungi) dont want to hurt u more yr never kabhi nhi...you are the one that make me laugh like helll i can say anything being love to delulu about u and me my dream mannnnn my januuu my darlinggg we will grow together and be successful</div>
+  <div class="buttons"><button class="btn yes" onclick="yesReply(this)">YES 💚</button><button class="btn no" onclick="noReply(this)">NO 😭</button></div><div class="response"></div>
+ </div>
+ <div class="question">
+  <h3>SORRYYY FOR EVERYTHING I DID JANUUU 😭❤️</h3>
+  <div class="story">kya aapne maaf kiya yaha nhi whenever he clicks on no soory emjoi appear saying my kuchupuchuuuu my darling aapne maafi nhi ki kr do guussssiiii nhi krte hai thuki thuki karo januuuu</div>
+  <div class="buttons"><button class="btn yes" onclick="yesReply(this)">YES 💋</button><button class="btn no" onclick="noReply(this)">NO 😭</button></div><div class="response"></div>
+ </div>
+</section>
+
+<section class="chapter" id="chapter4">
+ <div class="chapter-top">✦ Chapter 04 · Always us</div>
+ <h2>US ALWAYS USSSSS 💚</h2>
+ <div class="sub">Why to fear when your bandi is here ❤️</div>
+ <div class="doodle">♡₊˚ 🦢・₊✧ 🌷 ✧₊・🦢 ˚₊♡</div>
+ <div class="note-card"><div class="note-title">A wish for my man 🌙</div>May every little dream find its way to you. May your smile stay this beautiful. And may we keep cheering for each other, always. 💚</div>
+ <div class="love-ribbon"><span class="love-chip">you + me 🫶</span><span class="love-chip">always us ♾️</span><span class="love-chip">my safe place 🏡</span><span class="love-chip">my favourite human 💗</span></div>
+<div class="story">hum dono ki photo
+
+I want us to be grow together we will manfiest everything we want believe in gods plan alwaysss my man i want u k teri sare problem dur ho jaye jo tujhe chahiye vo mile teri responsibilities sare khatam ho jaye tu itna successful man bane tere parents proud ho every parents deserve child like uu kuchupuchuuuuuuuu my mannn universe will always with you and ofc mai toh hun hi tere sath januuu "why to fear when your bandi is here" all happiness comes to uu deserve to be happy smile like this and stay healthy and be mine only just mine made for vanshika jain only januuuu muahhhh loveeee uuuuuuuuuuu soooo muchhh always be happy earn bht sara fulfill your dream and stay as you are kind funny perfect man with perfect smile and always be happy januuu jo hota hai acche k liye hota hai sooo dont cry accha nhi lagta rote hue soo dont cry yrr..hasta hua bht mast lagta hai yrr bht jyada ek dam mera lagta hai....be happpyyyy, make parents proud and fulfill your dream januuu 🥹💚</div>
+ <div class="question">
+  <h3>maaf kar bhi doo januu 🥺</h3>
+  <div class="buttons"><button class="btn yes" onclick="finalYes()">YES 💋</button><button class="btn no" onclick="finalNo()">NO 😭</button></div>
+  <div class="response" id="finalResponse"></div>
+ </div>
+</section>
+</main>
+<footer class="end">
+ <div class="sparkle-line">🖤 💙 ❤️ 💚</div>
+ <h2>My man. Always. 🫶</h2>
+ Made with all my love, Vanshika Jain 💌<br>
+ <span class="tiny">You are loved, appreciated, and prayed for. ✨</span>
+</footer>
+<script>
+
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function ambientTwinkle(){
+ const bits=['✦','♡','⋆','✧','🦋','💗'];
+ for(let i=0;i<12;i++){
+  const el=document.createElement('span');el.className='float-emoji';
+  el.textContent=bits[Math.floor(Math.random()*bits.length)];
+  el.style.left=Math.random()*100+'vw';el.style.top=(65+Math.random()*35)+'vh';
+  el.style.fontSize=(12+Math.random()*13)+'px';el.style.color=['#9bc5ff','#ff9db4','#8ce6ba'][i%3];
+  el.style.setProperty('--x',(Math.random()*70-35)+'px');
+  el.style.setProperty('--y',(-45-Math.random()*90)+'px');
+  el.style.animation='pop '+(4+Math.random()*4)+'s ease-in-out forwards';
+  document.body.appendChild(el);setTimeout(()=>el.remove(),8500);
+ }
+}
+setInterval(ambientTwinkle,4200);
+
+function photoFallback(img,emoji,label,path){img.outerHTML='<div class="placeholder"><b>'+emoji+'</b>'+label+'<br><small>'+path+'</small></div>'}
+function emojiPop(list,count=34){
+ for(let i=0;i<count;i++){
+  const el=document.createElement('span');el.className='float-emoji';
+  el.textContent=list[Math.floor(Math.random()*list.length)];
+  const x=window.innerWidth*(.08+Math.random()*.84), y=window.innerHeight*(.45+Math.random()*.5);
+  el.style.left=x+'px';el.style.top=y+'px';
+  el.style.fontSize=(20+Math.random()*25)+'px';
+  el.style.setProperty('--x',(Math.random()*260-130)+'px');
+  el.style.setProperty('--y',(-100-Math.random()*330)+'px');
+  el.style.animation='pop '+(1.5+Math.random()*1.5)+'s ease-out forwards';
+  document.body.appendChild(el);setTimeout(()=>el.remove(),3300);
+ }
+}
+function fireworks(){
+ const colors=['#75aaff','#ff557b','#75e0ad','#ffffff','#ffd166'];
+ for(let n=0;n<7;n++){
+  setTimeout(()=>{
+   const x=window.innerWidth*(.15+Math.random()*.7),y=window.innerHeight*(.12+Math.random()*.55);
+   for(let i=0;i<24;i++){
+    const p=document.createElement('i');p.className='firework';p.style.left=x+'px';p.style.top=y+'px';
+    p.style.color=colors[Math.floor(Math.random()*colors.length)];
+    p.style.background='currentColor';
+    const a=(Math.PI*2*i)/24,dist=55+Math.random()*90;
+    p.style.setProperty('--bx',Math.cos(a)*dist+'px');p.style.setProperty('--by',Math.sin(a)*dist+'px');
+    p.style.animation='burst 1s ease-out forwards';document.body.appendChild(p);setTimeout(()=>p.remove(),1100);
+   }
+  },n*180);
+ }
+}
+function heartKiss(){emojiPop(['💋','💗','💖','💕','❤️','💘','💞','🫶','💚','💙'],55);fireworks()}
+function yesReply(btn){
+ const r=btn.parentElement.parentElement.querySelector('.response');
+ r.textContent='';heartKiss();
+ r.textContent='💋❤️💗💖💕💞 My mannnn thank you for forgiving me januuu 🥹💚';
+}
+function noReply(btn){
+ const r=btn.parentElement.parentElement.querySelector('.response');
+ r.textContent='';emojiPop(['😭','😭','🥺','😢','💧'],26);
+}
+function finalYes(){
+ const r=document.getElementById('finalResponse');r.textContent='';
+ heartKiss();
+ r.textContent='my man thank you for forgiving me and make sure wont happen again januuuu muahhhhh januuuu loveeeeee youuu sooo muchhhh januuu bht saraaa yr you are the man i pray for manifest krte bhai like dam yr be mine never leave meeeeeeeee plzzz sorrryyyyyyyyyyyyyyyyyyyyyyyyyyyyyy januuuuuuuuuuuuuuuuuuuuuuuuuuuuuu and misssiiiiiiiiiiiiiiii youuu yrr bht saraa 💋❤️💚';
+}
+function finalNo(){
+ document.getElementById('finalResponse').textContent='';
+ emojiPop(['😭','😭','🥺','😢','💧'],42);
+}
+</script>
+</body>
+</html>
